@@ -1,0 +1,7 @@
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\bin\Debug\realty.exe.config
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\bin\Debug\realty.exe
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\bin\Debug\realty.pdb
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\obj\Debug\Program.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\obj\Debug\Program.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\obj\Debug\realty.exe
+C:\Users\Dell\source\repos\eval_AgenceImmo\realty\obj\Debug\realty.pdb
