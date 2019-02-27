@@ -9,13 +9,11 @@ namespace program
     class Program
     {
         public static List<Realty> realtyList = new List<Realty>();
-        
 
         static void Main(string[] args)
         {
             Menu();
         }
-
         // Menu
         public static void Menu()
         {
@@ -66,7 +64,7 @@ namespace program
                     break;
             }
         }
-
+        // Revenir au menu
         public static void ReturnToMenu()
         {
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -75,7 +73,7 @@ namespace program
             Console.Clear();
             Menu();
         }
-
+        // Lister les biens
         public static void ListRealty()
         {
             if (realtyList.Count == 0)
@@ -94,14 +92,14 @@ namespace program
                     Console.WriteLine(item);
                     //Console.WriteLine(item.ToString());
                 }
-                
             }
             ReturnToMenu();
         }
-    
+        // Effacer les biens 
         public static void DeleteRealty()
         {
             Console.Clear();
+            Console.WriteLine("Suppression d'un bien du parc immobilier\n");
             Console.WriteLine("Numéro du bien que vous souhaitez supprimer : ");
             int toDelete;
             int del = -1;
@@ -136,7 +134,7 @@ namespace program
             }
             ReturnToMenu();
         }
-
+        // Quitter appli
         public static void Exit()
         {
             Console.WriteLine("Etes-vous sûr de vouloir quitter l'application ? Y / N");
@@ -151,13 +149,13 @@ namespace program
                 Menu();
             }
         }
-
         // Ajouter un appartement
         public static void AddFlat()
         {
             Console.WriteLine("Ajouter un appartement");
             Console.Clear();
             Console.WriteLine("Veuillez saisir un n° d'enregistrement : ");
+            // Faire une méthode TryParse peut être pratique : réduit le code et peut être réutilisée partout
             int registerNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("Veuillez saisir la localisation : ");
             string location = Console.ReadLine();
@@ -215,5 +213,58 @@ namespace program
             Console.WriteLine("\nParking ajouté avec succès !");
             ReturnToMenu();
         }
+
+        //CORRECTION :
+        //Méthode pour supprimer un bien
+        //public static void deleteRealty()
+        //{
+        //    Console.WriteLine("\nSuppression  d'un bien du parc immobilier");
+        //    Console.WriteLine("Numéro du bien que vous souhaitez supprimer ?");
+        //    var userChoice = Console.ReadLine();//Déclaration de la variable qui récupére l'entrée user
+        //    Realty registerNumberToRemove = null;//attribution d'une valeur à registerNumberToRemove pour éviter les conflits s'il ne récupère pas de valeur
+        //    if (int.TryParse(userChoice, out int value))// si la conversion du userChoice en int fonctionne, alors attribution de cette valeur à "value"
+        //    {
+        //        foreach (Realty realty in listOfRealty)//pour chaque item de la liste
+        //        {
+        //            if (realty.RegisterNumber == value)//si un registerNumber correspond à "value"
+        //            {
+        //                registerNumberToRemove = realty;//Attribution de la valeur de realty(qui a matché) à registerNumberToRemove
+        //            }
+        //        }
+
+        //        if (registerNumberToRemove == null)//s'il n'y a aucun match
+        //        {
+        //            Console.WriteLine("Le bien que vous recherchez n'existe pas ou plus.");
+        //        }
+        //        else
+        //        {
+        //            listOfRealty.Remove(registerNumberToRemove);//Suppression du bien demandé
+        //            Console.WriteLine("\nLe bien a été supprimé avec succès !");
+        //        }
+        //    }
+        //    else //si le parse int n'a pas fonctionné
+        //    {
+        //        Console.WriteLine("Il y a une erreur dans la saisie.");
+        //    }
+        //    menu();
+        //}
+
+        //Méthode pour vérifier que les entrées user soit bien de type int
+        //public static int IntVerification(string number)
+        //{
+        //    while (true)//Boucle infini temps que number n'est pas un int
+        //    {
+        //        if (int.TryParse(number, out int value))
+        //        {
+        //            return value;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Il y a une erreur dans la saisie. Veuillez recommencer en tapant un nombre entier.");
+        //            number = Console.ReadLine();
+        //        }
+        //    }
+        //}
+
     }
 }
